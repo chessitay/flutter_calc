@@ -31,12 +31,42 @@ class _MyHomePageState extends State<MyHomePage> {
   String displayText = "waiting for input";
   var result = "";
 
+  double firstNum = 0;
+  double secondNum = 0;
+  String operation = "";
+
   void buttonPressed(String value) {
     setState(() {
-      if (displayText == "waiting for input") {
-        displayText = value;
+      if (value == "del") {
+        displayText = "waiting for input";
+        firstNum = 0;
+        secondNum = 0;
+        operation = "";
+      } else if (value == "+" || value == "-" || value == "*") {
+        if (displayText != "waiting for input") {
+          firstNum = double.parse(displayText);
+          operation = value;
+          displayText = "waiting for input";
+        }
+      } else if (value == "=") {
+        if (displayText != "waiting for input" && operation != "") {
+          secondNum = double.parse(displayText);
+          if (operation == "+") {
+            displayText = (firstNum + secondNum).toString();
+          }
+          if (operation == "-") {
+            displayText = (firstNum - secondNum).toString();
+          }
+          if (operation == "*") {
+            displayText = (firstNum * secondNum).toString();
+          }
+        }
       } else {
-        displayText = displayText + value;
+        if (displayText == "waiting for input") {
+          displayText = value;
+        } else {
+          displayText = displayText + value;
+        }
       }
       print("user clicked $value");
     });
