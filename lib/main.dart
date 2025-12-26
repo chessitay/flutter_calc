@@ -109,6 +109,32 @@ class MyHomePage extends StatelessWidget {
                 ),
               ],
             ),
+            SizedBox(height: 7),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    print("0");
+                  },
+                  child: Text("0"),
+                ),
+                SizedBox(width: 5),
+                ElevatedButton(
+                  onPressed: () {
+                    print(".");
+                  },
+                  child: Text("."), // todo: implement .
+                ),
+                SizedBox(width: 5),
+                ElevatedButton(
+                  onPressed: () {
+                    print("del");
+                  },
+                  child: Text("del"), // todo: implement del + change into svg
+                ),
+              ],
+            ),
           ],
         ),
       ),
