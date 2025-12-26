@@ -83,7 +83,10 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(displayText),
+            Text(
+              displayText,
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
