@@ -62,6 +62,9 @@ class _MyHomePageState extends State<MyHomePage> {
           }
         }
       } else {
+        if (value == "." && displayText.contains(".")) {
+          return;
+        }
         if (displayText == "waiting for input") {
           displayText = value;
         } else {
