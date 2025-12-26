@@ -118,6 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
             Row(
+              spacing: 5,
               mainAxisSize: MainAxisSize.min,
               children: [
                 ElevatedButton(
@@ -126,21 +127,18 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: Text("1"),
                 ),
-                SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
                     buttonPressed("2");
                   },
                   child: Text("2"),
                 ),
-                SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
                     buttonPressed("3");
                   },
                   child: Text("3"),
                 ),
-                SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
                     buttonPressed("+");
@@ -151,6 +149,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             SizedBox(height: 7), // magic number (just found it to be the best)
             Row(
+              spacing: 5,
               mainAxisSize: MainAxisSize.min,
               children: [
                 ElevatedButton(
@@ -159,21 +158,18 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: Text("4"),
                 ),
-                SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
                     buttonPressed("5");
                   },
                   child: Text("5"),
                 ),
-                SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
                     buttonPressed("6");
                   },
                   child: Text("6"),
                 ),
-                SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
                     buttonPressed("-");
@@ -184,6 +180,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             SizedBox(height: 7),
             Row(
+              spacing: 5,
               mainAxisSize: MainAxisSize.min,
               children: [
                 ElevatedButton(
@@ -192,21 +189,18 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: Text("7"),
                 ),
-                SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
                     buttonPressed("8");
                   },
                   child: Text("8"),
                 ),
-                SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
                     buttonPressed("9");
                   },
                   child: Text("9"),
                 ),
-                SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
                     buttonPressed("*");
@@ -217,6 +211,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             SizedBox(height: 7),
             Row(
+              spacing: 5,
               mainAxisSize: MainAxisSize.min,
               children: [
                 ElevatedButton(
@@ -225,21 +220,18 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                   child: Text("0"),
                 ),
-                SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
                     buttonPressed(".");
                   },
                   child: Text("."),
                 ),
-                SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
                     buttonPressed("del");
                   },
                   child: Icon(Icons.backspace),
                 ),
-                SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
                     buttonPressed("=");
