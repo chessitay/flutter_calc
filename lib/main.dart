@@ -28,8 +28,19 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String displayText = "0";
+  String displayText = "waiting for input";
   var result = "";
+
+  void buttonPressed(String value) {
+    setState(() {
+      if (displayText == "waiting for input") {
+        displayText = value;
+      } else {
+        displayText = displayText + value;
+      }
+      print("user clicked $value");
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,40 +56,28 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    setState(() {
-                      displayText = displayText + "1";
-                      print("user has clicked 1");
-                    });
+                    buttonPressed("1");
                   },
                   child: Text("1"),
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    setState(() {
-                      displayText = displayText + "2";
-                      print("user has clicked 2");
-                    });
+                    buttonPressed("2");
                   },
                   child: Text("2"),
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    setState(() {
-                      displayText = displayText + "3";
-                      print("user has clicked 3");
-                    });
+                    buttonPressed("3");
                   },
                   child: Text("3"),
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    setState(() {
-                      displayText = displayText + "+";
-                      print("user has clicked +");
-                    });
+                    buttonPressed("+");
                   },
                   child: Text("+"),
                 ),
@@ -90,42 +89,30 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    setState(() {
-                      displayText = displayText + "4";
-                      print("user has clicked 4");
-                    });
+                    buttonPressed("4");
                   },
                   child: Text("4"),
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    setState(() {
-                      displayText = displayText + "5";
-                      print("user has clicked 5");
-                    });
+                    buttonPressed("5");
                   },
                   child: Text("5"),
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    setState(() {
-                      displayText = displayText + "6";
-                      print("user has clicked 6");
-                    });
+                    buttonPressed("6");
                   },
                   child: Text("6"),
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    setState(() {
-                      displayText = displayText + "-";
-                      print("user has clicked -");
-                    });
+                    buttonPressed("-");
                   },
-                  child: Text("-"), // todo: implement -
+                  child: Text("-"), // todo: implement - logic
                 ),
               ],
             ),
@@ -135,42 +122,30 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    setState(() {
-                      displayText = displayText + "7";
-                      print("user has clicked 7");
-                    });
+                    buttonPressed("7");
                   },
                   child: Text("7"),
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    setState(() {
-                      displayText = displayText + "8";
-                      print("user has clicked 8");
-                    });
+                    buttonPressed("8");
                   },
                   child: Text("8"),
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    setState(() {
-                      displayText = displayText + "9";
-                      print("user has clicked 9");
-                    });
+                    buttonPressed("9");
                   },
                   child: Text("9"),
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    setState(() {
-                      displayText = displayText + "*";
-                      print("user has clicked *");
-                    });
+                    buttonPressed("*");
                   },
-                  child: Text("*"), // todo: implement *
+                  child: Text("*"), // todo: implement * logic
                 ),
               ],
             ),
@@ -180,42 +155,30 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    setState(() {
-                      displayText = displayText + "0";
-                      print("user has clicked 0");
-                    });
+                    buttonPressed("0");
                   },
                   child: Text("0"),
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    setState(() {
-                      displayText = displayText + ".";
-                      print("user has clicked .");
-                    });
+                    buttonPressed(".");
                   },
-                  child: Text("."), // todo: implement .
+                  child: Text("."), // todo: implement . logic
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    setState(() {
-                      displayText = displayText + "del";
-                      print("user has clicked del");
-                    });
+                    buttonPressed("del");
                   },
-                  child: Text("del"), // todo: implement del + change into svg
+                  child: Text("del"), // todo: del logic + svg swap obv
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    setState(() {
-                      displayText = displayText + "=";
-                      print("user has clicked =");
-                    });
+                    buttonPressed("=");
                   },
-                  child: Text("="), // todo: implement =
+                  child: Text("="), //  todo: implement = logic
                 ),
               ],
             ),
