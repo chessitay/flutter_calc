@@ -55,6 +55,13 @@ class MyHomePage extends StatelessWidget {
                   },
                   child: Text("3"),
                 ),
+                SizedBox(width: 5),
+                ElevatedButton(
+                  onPressed: () {
+                    print("+");
+                  },
+                  child: Text("+"),
+                ),
               ],
             ),
             SizedBox(height: 7), // magic number (just found it to be the best)
@@ -80,6 +87,13 @@ class MyHomePage extends StatelessWidget {
                     print("6");
                   },
                   child: Text("6"),
+                ),
+                SizedBox(width: 5),
+                ElevatedButton(
+                  onPressed: () {
+                    print("-");
+                  },
+                  child: Text("-"), // todo: implement -
                 ),
               ],
             ),
@@ -107,6 +121,13 @@ class MyHomePage extends StatelessWidget {
                   },
                   child: Text("9"),
                 ),
+                SizedBox(width: 5),
+                ElevatedButton(
+                  onPressed: () {
+                    print("*");
+                  },
+                  child: Text("*"), // todo: implement *
+                ),
               ],
             ),
             SizedBox(height: 7),
@@ -132,6 +153,13 @@ class MyHomePage extends StatelessWidget {
                     print("del");
                   },
                   child: Text("del"), // todo: implement del + change into svg
+                ),
+                SizedBox(width: 5),
+                ElevatedButton(
+                  onPressed: () {
+                    print("=");
+                  },
+                  child: Text("="), // todo: implement =
                 ),
               ],
             ),
