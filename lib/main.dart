@@ -27,7 +27,20 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Flutter Calc')),
-      body: const Center(child: Text('Flutter Calc')),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("keyboard"),
+            ElevatedButton(
+              onPressed: () {
+                print("pressed");
+              },
+              child: Text("Press Me"),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
