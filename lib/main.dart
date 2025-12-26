@@ -46,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      displayText = "1";
+                      displayText = displayText + "1";
                       print("user has clicked 1");
                     });
                   },
@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      displayText = "2";
+                      displayText = displayText + "2";
                       print("user has clicked 2");
                     });
                   },
@@ -66,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      displayText = "3";
+                      displayText = displayText + "3";
                       print("user has clicked 3");
                     });
                   },
@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      displayText = "+";
+                      displayText = displayText + "+";
                       print("user has clicked +");
                     });
                   },
@@ -91,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      displayText = "4";
+                      displayText = displayText + "4";
                       print("user has clicked 4");
                     });
                   },
@@ -101,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      displayText = "5";
+                      displayText = displayText + "5";
                       print("user has clicked 5");
                     });
                   },
@@ -111,7 +111,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      displayText = "6";
+                      displayText = displayText + "6";
                       print("user has clicked 6");
                     });
                   },
@@ -121,7 +121,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      displayText = "-";
+                      displayText = displayText + "-";
                       print("user has clicked -");
                     });
                   },
@@ -136,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      displayText = "7";
+                      displayText = displayText + "7";
                       print("user has clicked 7");
                     });
                   },
@@ -146,7 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      displayText = "8";
+                      displayText = displayText + "8";
                       print("user has clicked 8");
                     });
                   },
@@ -156,7 +156,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      displayText = "9";
+                      displayText = displayText + "9";
                       print("user has clicked 9");
                     });
                   },
@@ -166,7 +166,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      displayText = "*";
+                      displayText = displayText + "*";
                       print("user has clicked *");
                     });
                   },
@@ -181,7 +181,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      displayText = "0";
+                      displayText = displayText + "0";
                       print("user has clicked 0");
                     });
                   },
@@ -191,7 +191,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      displayText = ".";
+                      displayText = displayText + ".";
                       print("user has clicked .");
                     });
                   },
@@ -201,7 +201,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      displayText = "del";
+                      displayText = displayText + "del";
                       print("user has clicked del");
                     });
                   },
@@ -211,7 +211,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(
                   onPressed: () {
                     setState(() {
-                      displayText = "=";
+                      displayText = displayText + "=";
                       print("user has clicked =");
                     });
                   },
