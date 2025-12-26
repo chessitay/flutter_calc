@@ -50,22 +50,14 @@ class _MyHomePageState extends State<MyHomePage> {
             secondNum = double.parse(displayText);
             if (operation == "+") {
               displayText = (firstNum + secondNum).toString();
-              firstNum = double.parse(displayText);
-              operation = value;
-              newNumber = true;
-            }
-            if (operation == "-") {
+            } else if (operation == "-") {
               displayText = (firstNum - secondNum).toString();
-              firstNum = double.parse(displayText);
-              operation = value;
-              newNumber = true;
-            }
-            if (operation == "*") {
+            } else if (operation == "*") {
               displayText = (firstNum * secondNum).toString();
-              firstNum = double.parse(displayText);
-              operation = value;
-              newNumber = true;
             }
+            firstNum = double.parse(displayText);
+            operation = value;
+            newNumber = true;
           } else {
             firstNum = double.parse(displayText);
             operation = value;
@@ -77,16 +69,12 @@ class _MyHomePageState extends State<MyHomePage> {
           secondNum = double.parse(displayText);
           if (operation == "+") {
             displayText = (firstNum + secondNum).toString();
-            newNumber = true;
-          }
-          if (operation == "-") {
+          } else if (operation == "-") {
             displayText = (firstNum - secondNum).toString();
-            newNumber = true;
-          }
-          if (operation == "*") {
+          } else if (operation == "*") {
             displayText = (firstNum * secondNum).toString();
-            newNumber = true;
           }
+          newNumber = true;
         }
       } else {
         if (value == "." && displayText.contains(".")) {
