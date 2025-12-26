@@ -31,6 +31,7 @@ class _MyHomePageState extends State<MyHomePage> {
   String displayText = "waiting for input";
   var result = "";
 
+  bool newNumber = false;
   double firstNum = 0;
   double secondNum = 0;
   String operation = "";
@@ -42,23 +43,49 @@ class _MyHomePageState extends State<MyHomePage> {
         firstNum = 0;
         secondNum = 0;
         operation = "";
+        newNumber = false;
       } else if (value == "+" || value == "-" || value == "*") {
         if (displayText != "waiting for input") {
-          firstNum = double.parse(displayText);
-          operation = value;
-          displayText = "waiting for input";
+          if (operation != "") {
+            secondNum = double.parse(displayText);
+            if (operation == "+") {
+              displayText = (firstNum + secondNum).toString();
+              firstNum = double.parse(displayText);
+              operation = value;
+              newNumber = true;
+            }
+            if (operation == "-") {
+              displayText = (firstNum - secondNum).toString();
+              firstNum = double.parse(displayText);
+              operation = value;
+              newNumber = true;
+            }
+            if (operation == "*") {
+              displayText = (firstNum * secondNum).toString();
+              firstNum = double.parse(displayText);
+              operation = value;
+              newNumber = true;
+            }
+          } else {
+            firstNum = double.parse(displayText);
+            operation = value;
+            newNumber = true;
+          }
         }
       } else if (value == "=") {
         if (displayText != "waiting for input" && operation != "") {
           secondNum = double.parse(displayText);
           if (operation == "+") {
             displayText = (firstNum + secondNum).toString();
+            newNumber = true;
           }
           if (operation == "-") {
             displayText = (firstNum - secondNum).toString();
+            newNumber = true;
           }
           if (operation == "*") {
             displayText = (firstNum * secondNum).toString();
+            newNumber = true;
           }
         }
       } else {
@@ -67,6 +94,9 @@ class _MyHomePageState extends State<MyHomePage> {
         }
         if (displayText == "waiting for input") {
           displayText = value;
+        } else if (newNumber == true) {
+          displayText = value;
+          newNumber = false;
         } else {
           displayText = displayText + value;
         }
