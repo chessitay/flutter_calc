@@ -57,6 +57,58 @@ class MyHomePage extends StatelessWidget {
                 ),
               ],
             ),
+            SizedBox(height: 7), // magic number (just found it to be the best)
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    print("4");
+                  },
+                  child: Text("4"),
+                ),
+                SizedBox(width: 5),
+                ElevatedButton(
+                  onPressed: () {
+                    print("5");
+                  },
+                  child: Text("5"),
+                ),
+                SizedBox(width: 5),
+                ElevatedButton(
+                  onPressed: () {
+                    print("6");
+                  },
+                  child: Text("6"),
+                ),
+              ],
+            ),
+            SizedBox(height: 7),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    print("7");
+                  },
+                  child: Text("7"),
+                ),
+                SizedBox(width: 5),
+                ElevatedButton(
+                  onPressed: () {
+                    print("8");
+                  },
+                  child: Text("8"),
+                ),
+                SizedBox(width: 5),
+                ElevatedButton(
+                  onPressed: () {
+                    print("9");
+                  },
+                  child: Text("9"),
+                ),
+              ],
+            ),
           ],
         ),
       ),
