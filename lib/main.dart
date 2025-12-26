@@ -32,11 +32,30 @@ class MyHomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text("keyboard"),
-            ElevatedButton(
-              onPressed: () {
-                print("pressed");
-              },
-              child: Text("Press Me"),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    print("1");
+                  },
+                  child: Text("1"),
+                ),
+                SizedBox(width: 5),
+                ElevatedButton(
+                  onPressed: () {
+                    print("2");
+                  },
+                  child: Text("2"),
+                ),
+                SizedBox(width: 5),
+                ElevatedButton(
+                  onPressed: () {
+                    print("3");
+                  },
+                  child: Text("3"),
+                ),
+              ],
             ),
           ],
         ),
