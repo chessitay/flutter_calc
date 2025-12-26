@@ -142,7 +142,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     buttonPressed("-");
                   },
-                  child: Text("-"), // todo: implement - logic
+                  child: Text("-"),
                 ),
               ],
             ),
@@ -175,7 +175,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     buttonPressed("*");
                   },
-                  child: Text("*"), // todo: implement * logic
+                  child: Text("*"),
                 ),
               ],
             ),
@@ -194,21 +194,21 @@ class _MyHomePageState extends State<MyHomePage> {
                   onPressed: () {
                     buttonPressed(".");
                   },
-                  child: Text("."), // todo: implement . logic
+                  child: Text("."),
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
                     buttonPressed("del");
                   },
-                  child: Text("del"), // todo: del logic + svg swap obv
+                  child: Icon(Icons.backspace),
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
                     buttonPressed("=");
                   },
-                  child: Text("="), //  todo: implement = logic
+                  child: Text("="),
                 ),
               ],
             ),
