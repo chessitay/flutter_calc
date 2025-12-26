@@ -20,8 +20,16 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  String displayText = "0";
+  var result = "";
 
   @override
   Widget build(BuildContext context) {
@@ -31,34 +39,46 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("keyboard"),
+            Text(displayText),
             Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    print("1");
+                    setState(() {
+                      displayText = "1";
+                      print("user has clicked 1");
+                    });
                   },
                   child: Text("1"),
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    print("2");
+                    setState(() {
+                      displayText = "2";
+                      print("user has clicked 2");
+                    });
                   },
                   child: Text("2"),
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    print("3");
+                    setState(() {
+                      displayText = "3";
+                      print("user has clicked 3");
+                    });
                   },
                   child: Text("3"),
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    print("+");
+                    setState(() {
+                      displayText = "+";
+                      print("user has clicked +");
+                    });
                   },
                   child: Text("+"),
                 ),
@@ -70,28 +90,40 @@ class MyHomePage extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    print("4");
+                    setState(() {
+                      displayText = "4";
+                      print("user has clicked 4");
+                    });
                   },
                   child: Text("4"),
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    print("5");
+                    setState(() {
+                      displayText = "5";
+                      print("user has clicked 5");
+                    });
                   },
                   child: Text("5"),
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    print("6");
+                    setState(() {
+                      displayText = "6";
+                      print("user has clicked 6");
+                    });
                   },
                   child: Text("6"),
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    print("-");
+                    setState(() {
+                      displayText = "-";
+                      print("user has clicked -");
+                    });
                   },
                   child: Text("-"), // todo: implement -
                 ),
@@ -103,28 +135,40 @@ class MyHomePage extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    print("7");
+                    setState(() {
+                      displayText = "7";
+                      print("user has clicked 7");
+                    });
                   },
                   child: Text("7"),
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    print("8");
+                    setState(() {
+                      displayText = "8";
+                      print("user has clicked 8");
+                    });
                   },
                   child: Text("8"),
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    print("9");
+                    setState(() {
+                      displayText = "9";
+                      print("user has clicked 9");
+                    });
                   },
                   child: Text("9"),
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    print("*");
+                    setState(() {
+                      displayText = "*";
+                      print("user has clicked *");
+                    });
                   },
                   child: Text("*"), // todo: implement *
                 ),
@@ -136,28 +180,40 @@ class MyHomePage extends StatelessWidget {
               children: [
                 ElevatedButton(
                   onPressed: () {
-                    print("0");
+                    setState(() {
+                      displayText = "0";
+                      print("user has clicked 0");
+                    });
                   },
                   child: Text("0"),
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    print(".");
+                    setState(() {
+                      displayText = ".";
+                      print("user has clicked .");
+                    });
                   },
                   child: Text("."), // todo: implement .
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    print("del");
+                    setState(() {
+                      displayText = "del";
+                      print("user has clicked del");
+                    });
                   },
                   child: Text("del"), // todo: implement del + change into svg
                 ),
                 SizedBox(width: 5),
                 ElevatedButton(
                   onPressed: () {
-                    print("=");
+                    setState(() {
+                      displayText = "=";
+                      print("user has clicked =");
+                    });
                   },
                   child: Text("="), // todo: implement =
                 ),
