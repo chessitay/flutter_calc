@@ -36,6 +36,13 @@ class _MyHomePageState extends State<MyHomePage> {
   double secondNum = 0;
   String operation = "";
 
+  final List<List<String>> buttonLayout = [
+    ["1", "2", "3", "+"],
+    ["4", "5", "6", "-"],
+    ["7", "8", "9", "*"],
+    ["0", ".", "del", "="],
+  ];
+
   void buttonPressed(String value) {
     setState(() {
       if (value == "del") {
@@ -105,129 +112,35 @@ class _MyHomePageState extends State<MyHomePage> {
               displayText,
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
-            Row(
-              spacing: 5,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    buttonPressed("1");
-                  },
-                  child: Text("1"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    buttonPressed("2");
-                  },
-                  child: Text("2"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    buttonPressed("3");
-                  },
-                  child: Text("3"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    buttonPressed("+");
-                  },
-                  child: Text("+"),
-                ),
-              ],
-            ),
-            SizedBox(height: 7), // magic number (just found it to be the best)
-            Row(
-              spacing: 5,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    buttonPressed("4");
-                  },
-                  child: Text("4"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    buttonPressed("5");
-                  },
-                  child: Text("5"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    buttonPressed("6");
-                  },
-                  child: Text("6"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    buttonPressed("-");
-                  },
-                  child: Text("-"),
-                ),
-              ],
-            ),
-            SizedBox(height: 7),
-            Row(
-              spacing: 5,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    buttonPressed("7");
-                  },
-                  child: Text("7"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    buttonPressed("8");
-                  },
-                  child: Text("8"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    buttonPressed("9");
-                  },
-                  child: Text("9"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    buttonPressed("*");
-                  },
-                  child: Text("*"),
-                ),
-              ],
-            ),
-            SizedBox(height: 7),
-            Row(
-              spacing: 5,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    buttonPressed("0");
-                  },
-                  child: Text("0"),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    buttonPressed(".");
-                  },
-                  child: Text("."),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    buttonPressed("del");
-                  },
-                  child: Icon(Icons.backspace),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    buttonPressed("=");
-                  },
-                  child: Text("="),
-                ),
-              ],
-            ),
+            ...buttonLayout.map((row) {
+              return Column(
+                children: [
+                  Row(
+                    spacing: 5,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      ...row.map((buttonValue) {
+                        Widget
+                        delButton; // del button is an icon so I need to create a widget for it
+                        if (buttonValue == "del") {
+                          delButton = Icon(Icons.backspace);
+                        } else {
+                          delButton = Text(buttonValue);
+                        }
+
+                        return ElevatedButton(
+                          onPressed: () {
+                            buttonPressed(buttonValue);
+                          },
+                          child: delButton,
+                        );
+                      }),
+                    ],
+                  ),
+                  SizedBox(height: 7),
+                ],
+              );
+            }),
           ],
         ),
       ),
