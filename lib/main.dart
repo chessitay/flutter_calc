@@ -95,6 +95,8 @@ class _MyHomePageState extends State<MyHomePage> {
           } else {
             displayText = res.toString();
           }
+
+          operation = "";
           newNumber = true;
         }
       } else {
