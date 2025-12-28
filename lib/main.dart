@@ -55,12 +55,19 @@ class _MyHomePageState extends State<MyHomePage> {
         if (displayText != "waiting for input") {
           if (operation != "") {
             secondNum = double.parse(displayText);
+            double res = 0;
             if (operation == "+") {
-              displayText = (firstNum + secondNum).toString();
+              res = firstNum + secondNum;
             } else if (operation == "-") {
-              displayText = (firstNum - secondNum).toString();
+              res = firstNum - secondNum;
             } else if (operation == "*") {
-              displayText = (firstNum * secondNum).toString();
+              res = firstNum * secondNum;
+            }
+
+            if (res % 1 == 0) {
+              displayText = res.toInt().toString();
+            } else {
+              displayText = res.toString();
             }
             firstNum = double.parse(displayText);
             operation = value;
@@ -74,12 +81,19 @@ class _MyHomePageState extends State<MyHomePage> {
       } else if (value == "=") {
         if (displayText != "waiting for input" && operation != "") {
           secondNum = double.parse(displayText);
+          double res = 0;
           if (operation == "+") {
-            displayText = (firstNum + secondNum).toString();
+            res = firstNum + secondNum;
           } else if (operation == "-") {
-            displayText = (firstNum - secondNum).toString();
+            res = firstNum - secondNum;
           } else if (operation == "*") {
-            displayText = (firstNum * secondNum).toString();
+            res = firstNum * secondNum;
+          }
+
+          if (res % 1 == 0) {
+            displayText = res.toInt().toString();
+          } else {
+            displayText = res.toString();
           }
           newNumber = true;
         }
