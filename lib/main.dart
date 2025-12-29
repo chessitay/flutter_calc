@@ -122,7 +122,11 @@ class _MyHomePageState extends State<MyHomePage> {
           formula = value;
         } else if (newNumber == true) {
           displayText = value;
-          formula = value;
+          if (operation != "") {
+            formula = "$firstNum $operation $displayText";
+          } else {
+            formula = value;
+          }
           newNumber = false;
         } else {
           displayText = displayText + value;
