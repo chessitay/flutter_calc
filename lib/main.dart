@@ -159,12 +159,24 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ...history.map((row) {
-              return Text(
-                row.join(" "),
-                style: TextStyle(fontSize: 18, color: Colors.grey),
-              );
-            }),
+            if (history.isNotEmpty)
+              Container(
+                height: 100,
+                width: double.infinity,
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: SingleChildScrollView(
+                  reverse: true,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: history.map((row) {
+                      return Text(
+                        row.join(" "),
+                        style: TextStyle(fontSize: 18, color: Colors.grey),
+                      );
+                    }).toList(),
+                  ),
+                ),
+              ),
             if (history.isNotEmpty) SizedBox(height: 10),
             Text(
               formula,
