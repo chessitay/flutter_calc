@@ -77,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
             }
             firstNum = double.parse(displayText);
             operation = value;
-            formula = "$firstNum $operation $secondNum";
+            formula = "$firstNum $operation";
             newNumber = true;
           } else {
             firstNum = double.parse(displayText);
