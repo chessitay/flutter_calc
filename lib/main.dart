@@ -32,9 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
   var result = "";
 
   String formula = "";
-  List<String> history = [];
-
-  String textToShow = "";
+  List<List<String>> history = [];
 
   bool newNumber = false;
   double firstNum = 0;
@@ -102,11 +100,23 @@ class _MyHomePageState extends State<MyHomePage> {
 
           if (res % 1 == 0) {
             displayText = res.toInt().toString();
-            history.add(formula);
+            history.add([
+              firstNum.toString(),
+              operation,
+              secondNum.toString(),
+              "=",
+              res.toInt().toString(),
+            ]);
             print(history);
           } else {
             displayText = res.toString();
-            history.add(formula);
+            history.add([
+              firstNum.toString(),
+              operation,
+              secondNum.toString(),
+              "=",
+              res.toString(),
+            ]);
             print(history);
           }
 
