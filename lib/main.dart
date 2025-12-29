@@ -34,6 +34,8 @@ class _MyHomePageState extends State<MyHomePage> {
   String formula = "";
   List<String> history = [];
 
+  String textToShow = "";
+
   bool newNumber = false;
   double firstNum = 0;
   double secondNum = 0;
@@ -129,6 +131,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    if (newNumber == true) {
+      textToShow = formula;
+    } else {
+      textToShow = displayText;
+    }
+
     return Scaffold(
       appBar: AppBar(title: const Text('Flutter Calc')),
       body: Center(
@@ -136,7 +144,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              formula,
+              textToShow,
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
             ...buttonLayout.map((row) {
