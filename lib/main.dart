@@ -159,6 +159,13 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            ...history.map((row) {
+              return Text(
+                row.join(" "),
+                style: TextStyle(fontSize: 18, color: Colors.grey),
+              );
+            }),
+            if (history.isNotEmpty) SizedBox(height: 10),
             Text(
               formula,
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
