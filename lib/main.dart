@@ -52,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       if (value == "del") {
         displayText = "waiting for input";
+        formula = "";
         firstNum = 0;
         secondNum = 0;
         operation = "";
@@ -118,11 +119,18 @@ class _MyHomePageState extends State<MyHomePage> {
         }
         if (displayText == "waiting for input") {
           displayText = value;
+          formula = value;
         } else if (newNumber == true) {
           displayText = value;
+          formula = value;
           newNumber = false;
         } else {
           displayText = displayText + value;
+          if (operation != "") {
+            formula = "$firstNum $operation $displayText";
+          } else {
+            formula = displayText;
+          }
         }
       }
       print("user clicked $value");
@@ -131,12 +139,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    if (newNumber == true) {
-      textToShow = formula;
-    } else {
-      textToShow = displayText;
-    }
-
     return Scaffold(
       appBar: AppBar(title: const Text('Flutter Calc')),
       body: Center(
@@ -144,7 +146,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              textToShow,
+              formula,
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
             ...buttonLayout.map((row) {
