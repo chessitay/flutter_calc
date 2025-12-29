@@ -31,6 +31,9 @@ class _MyHomePageState extends State<MyHomePage> {
   String displayText = "waiting for input";
   var result = "";
 
+  String formula = "";
+  List<String> history = [];
+
   bool newNumber = false;
   double firstNum = 0;
   double secondNum = 0;
@@ -71,10 +74,12 @@ class _MyHomePageState extends State<MyHomePage> {
             }
             firstNum = double.parse(displayText);
             operation = value;
+            formula = "$firstNum $operation $secondNum";
             newNumber = true;
           } else {
             firstNum = double.parse(displayText);
             operation = value;
+            formula = "$firstNum $operation";
             newNumber = true;
           }
         }
@@ -90,10 +95,16 @@ class _MyHomePageState extends State<MyHomePage> {
             res = firstNum * secondNum;
           }
 
+          formula = "$firstNum $operation $secondNum = $res";
+
           if (res % 1 == 0) {
             displayText = res.toInt().toString();
+            history.add(formula);
+            print(history);
           } else {
             displayText = res.toString();
+            history.add(formula);
+            print(history);
           }
 
           operation = "";
@@ -125,7 +136,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              displayText,
+              formula,
               style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
             ...buttonLayout.map((row) {
