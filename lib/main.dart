@@ -169,9 +169,29 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: history.map((row) {
-                      return Text(
-                        row.join(" "),
-                        style: TextStyle(fontSize: 18, color: Colors.grey),
+                      String historyLine = row.join(" ");
+                      return InkWell(
+                        onTap: () {
+                          setState(() {
+                            String res = row[4];
+                            displayText = res;
+                            formula = res;
+                            firstNum = double.parse(res);
+                            operation = "";
+                            newNumber = true;
+                          });
+                          print("user clicked the formula $historyLine");
+                        },
+                        child: Container(
+                          padding: EdgeInsets.symmetric(
+                            vertical: 4,
+                            horizontal: 8,
+                          ),
+                          child: Text(
+                            historyLine,
+                            style: TextStyle(fontSize: 18, color: Colors.grey),
+                          ),
+                        ),
                       );
                     }).toList(),
                   ),
